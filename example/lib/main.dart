@@ -26,33 +26,38 @@ class TempPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Demo'),
       ),
-      body: Center(child: RaisedButton(
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return PopularAlert(
-                  title: 'title',
-                  content: 'content',
-                  actions: [
-                    FlatButton(
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return PopularAlert(
+                    title: 'title',
+                    content: 'content',
+                    actions: [
+                      FlatButton(
                         onPressed: () {},
                         child: Text(
-                          'Cancel',
+                          'A',
                           style: TextStyle(color: Colors.blue),
-                        )),
-                    FlatButton(
+                        ),
+                      ),
+                      FlatButton(
                         onPressed: () {},
                         child: Text(
-                          'Ok',
+                          'B',
                           style: TextStyle(color: Colors.red),
-                        )),
-                  ],
-                );
-              });
-        },
-        child: Text('show'),
-      ),),
+                        ),
+                      ),
+                    ],
+                  );
+
+                });
+          },
+          child: Text('show'),
+        ),
+      ),
     );
   }
 }
