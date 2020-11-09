@@ -5,7 +5,8 @@ class PopularAlert extends Dialog {
   String title;
   String content;
   List<Widget> actions;
-  PopularAlert({Key key, this.title, this.content, this.actions}) : super(key: key);
+  PopularAlert({Key key, this.title, this.content, this.actions})
+      : super(key: key);
 
   static const _dialogWidth = 270.0;
   @override
@@ -29,7 +30,8 @@ class PopularAlert extends Dialog {
     }
 
     var content = Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.white),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Colors.white),
       width: _dialogWidth,
       child: IntrinsicHeight(
         child: Column(
@@ -39,7 +41,10 @@ class PopularAlert extends Dialog {
                     margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
                     child: Text(
                       this.title,
-                      style: TextStyle(color: Color(0xff333333), fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Color(0xff333333),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                   )
                 : Container(),
