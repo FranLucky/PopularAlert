@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+// A simple and versatile alert widget wrapped in flutter.The way to use it is very similar to what flutter comes with
+// not the way Material looks
+// and not the serious frame dropping in cupertino!
+
 // ignore: must_be_immutable
 class PopularAlert extends Dialog {
   String title;
@@ -7,14 +11,16 @@ class PopularAlert extends Dialog {
   List<Widget> actions;
   PopularAlert({Key key, this.title, this.content, this.actions})
       : super(key: key);
-
+ // const value of the dialog width = 270.0
   static const _dialogWidth = 270.0;
   @override
   Widget build(BuildContext context) {
+    // config the buttons below title & content
+    // horizontal alignment when there are two, vertical alignment when there are more than two, will be supported in version 0.0.2.
     List<Widget> _loadActions() {
       List<Widget> acs = List();
       for (int i = 0; i < this.actions.length; i++) {
-        if (i % 2 == 1) {
+        if (i % 2 == 1) { // add divider in two buttons
           acs.add(
             Container(
               width: 1,
@@ -24,11 +30,14 @@ class PopularAlert extends Dialog {
           );
         }
         Widget e = this.actions[i];
+        // Flexible, that's allows them to automatically calculate the size
         acs.add(Flexible(fit: FlexFit.tight, child: e));
       }
       return acs;
     }
-
+    // Defining the content of a alert
+    // title
+    // content or description
     var content = Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10), color: Colors.white),

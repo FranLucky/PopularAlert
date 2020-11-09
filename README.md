@@ -1,6 +1,9 @@
 # popular_alert
 
-A kind of alert we often use
+A simple and versatile alert widget wrapped in
+ flutter.The way to use it is very similar to
+  what flutter comes with, not the way Material
+   looks  and not the serious frame dropping in cupertino!
 
 ## Getting Started
 
